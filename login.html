@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rohit Login</title>
+</head>
+<body>
+  <h2>Login / Signup</h2>
+  
+  <input type="email" id="email" placeholder="Email"><br><br>
+  <input type="password" id="password" placeholder="Password"><br><br>
+  
+  <button onclick="signup()">Signup</button>
+  <button onclick="login()">Login</button>
+  <button onclick="logout()">Logout</button>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
+    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyCx0d5mXCa6IhoZr9DNHiHevjZskRz-SQw",
+      authDomain: "rohitweb-cf41e.firebaseapp.com",
+      projectId: "rohitweb-cf41e",
+      storageBucket: "rohitweb-cf41e.firebasestorage.app",
+      messagingSenderId: "491270085286",
+      appId: "1:491270085286:web:afa1bb2d3e03214d1bf267",
+      measurementId: "G-HB3MG31G9D"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth();
+
+    window.signup = function() {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+      createUserWithEmailAndPassword(auth, email, password)
+        .then(userCredential => {
+          alert("Signup successful!");
+        })
+        .catch(error => {
+          alert(error.message);
+        });
+    };
+
+    window.login = function() {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+      signInWithEmailAndPassword(auth, email, password)
+        .then(userCredential => {
+          alert("Login successful!");
+        })
+        .catch(error => {
+          alert(error.message);
+        });
+    };
+
+    window.logout = function() {
+      signOut(auth)
+        .then(() => {
+          alert("Logged out");
+        })
+        .catch(error => {
+          alert(error.message);
+        });
+    };
+  </script>
+</body>
+</html>
