@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rohit's Video</title>
+</head>
+<body>
+  <h2>Watch My YouTube Short</h2>
+
+  <!-- Yahi hai tumhara iframe -->
+  <iframe width="315" height="560" 
+  src="https://www.youtube.com/embed/AgQtppvFDig" 
+  title="YouTube video player" frameborder="0" 
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+  allowfullscreen></iframe>
+
+</body>
+</html>
