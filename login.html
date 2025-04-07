@@ -1,18 +1,11 @@
-
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html><html>
 <head>
-  <title>Rohit Login</title>
+  <title>Login / Signup</title>
 </head>
 <body>
-  <h2>Login / Signup</h2>
-  
-  <input type="email" id="email" placeholder="Email"><br><br>
-  <input type="password" id="password" placeholder="Password"><br><br>
-  
-  <button onclick="signup()">Signup</button>
-  <button onclick="login()">Login</button>
-  <button onclick="logout()">Logout</button>
+  <h2>Login / Signup Page</h2><input type="email" id="email" placeholder="Email"><br><br> <input type="password" id="password" placeholder="Password"><br><br>
+
+<button onclick="signup()">Signup</button> <button onclick="login()">Login</button> <button onclick="logout()">Logout</button>
 
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
@@ -22,14 +15,14 @@
       apiKey: "AIzaSyCx0d5mXCa6IhoZr9DNHiHevjZskRz-SQw",
       authDomain: "rohitweb-cf41e.firebaseapp.com",
       projectId: "rohitweb-cf41e",
-      storageBucket: "rohitweb-cf41e.firebasestorage.app",
+      storageBucket: "rohitweb-cf41e.appspot.com",
       messagingSenderId: "491270085286",
       appId: "1:491270085286:web:afa1bb2d3e03214d1bf267",
       measurementId: "G-HB3MG31G9D"
     };
 
     const app = initializeApp(firebaseConfig);
-    const auth = getAuth();
+    const auth = getAuth(app);
 
     window.signup = function() {
       const email = document.getElementById("email").value;
@@ -64,6 +57,5 @@
           alert(error.message);
         });
     };
-  </script>
-</body>
+  </script></body>
 </html>
